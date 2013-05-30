@@ -1,6 +1,5 @@
 package com.spiersad;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,12 +52,12 @@ public class InfixToPostfixConverter {
                 i++;
                 arrayStack.pop();
             }
-            else{
+            else if (charValue >= '0' && charValue <= '9'){
                 postFix.append(charValue)
                         .append(' ');
                 i++;
             }
-
+            else throw new IllegalArgumentException("Must be a number or one of the allowable operators");
         }
         while (arrayStack.length() > 0){
             postFix.append(arrayStack.pop())

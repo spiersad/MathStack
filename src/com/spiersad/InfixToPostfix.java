@@ -9,7 +9,7 @@ package com.spiersad;
  */
 public class InfixToPostfix {
     public static void main (String[] args){
-        String string = new String("(4+4)*4+4*+5/6/(9+3(4+4))*(4+3*4)");
+        String string = new String("(1+2)*3+4*+5/6/(7+8(9+0))*(4+3*4)");
         InfixToPostfixConverter converter = new InfixToPostfixConverter();
         string = converter.convert(string);
         System.out.println(string);
