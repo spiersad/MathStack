@@ -53,9 +53,13 @@ public class InfixToPostfixConverter {
                 arrayStack.pop();
             }
             else if (charValue >= '0' && charValue <= '9'){
-                postFix.append(charValue)
-                        .append(' ');
-                i++;
+                while (charValue >= '0' && charValue <= '9'){
+                    postFix.append(charValue);
+                    i++;
+                    if (i == inFix.length()) break;
+                    charValue = inFix.charAt(i);
+                }
+                postFix.append(' ');
             }
             else throw new IllegalArgumentException("Must be a number or one of the allowable operators");
         }
